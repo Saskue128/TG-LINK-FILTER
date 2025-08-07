@@ -3,9 +3,11 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums import ChatMemberStatus
 import re, os
 
-API_ID = int(os.getenv("24696910"))
-API_HASH = os.getenv("e1481c43ffade210467184b95fcc5d6f")
-BOT_TOKEN = os.getenv("7644137923:AAHA-5XvyZ_SOF3x1vKW33IEgNU05-kYll0")
+import os
+
+API_ID = int(os.environ.get("API_ID"))
+API_HASH = os.environ.get("API_HASH")
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
 LINK_REGEX = r"(https?://|www\.|t\.me/)"
 
