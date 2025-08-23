@@ -33,7 +33,7 @@ async def start_handler(client, message):
                     InlineKeyboardButton("💬 Support Group", url="https://t.me/AU_ANIMES_COMMUNITY"),
                 ],
                 [
-                    InlineKeyboardButton("➕ Add Me to Your Group", url="https://t.me/YOUR_BOT_USERNAME?startgroup=true"),
+                    InlineKeyboardButton("➕ Add Me to Your Group", url="https://t.me/AU_LINK_REMOVER_BOT?startgroup=true"),
                 ]
             ]
         )
