@@ -18,7 +18,7 @@ web_app = Flask(__name__)
 
 @web_app.route("/")
 def home():
-    return "✅ Bot is alive!"
+    return "✅ Bot is alive and running!"
 
 # Pyrogram Client
 app = Client(
@@ -48,6 +48,29 @@ async def start_handler(client, message):
                 ]
             ]
         )
+    )
+
+@app.on_message(filters.private & filters.command("help"))
+async def help_handler(client, message):
+    await message.reply(
+        "**🆘 Help - Link Remover Bot**\n\n"
+        "👋 Main ek simple sa **Link Remover Bot** hoon.\n\n"
+        "🔷 Jab koi normal user group me link bhejta hai, to main us message ko **automatic delete** kar deta hoon.\n"
+        "🔶 Lekin group ke **admins** ko link bhejne ki full permission hai.\n\n"
+        "❗ Bas mujhe apne group me **add** karo aur **admin** bana do. Baaki sab main sambhal lunga. 😎"
+    )
+
+@app.on_message(filters.private & filters.command("about"))
+async def about_handler(client, message):
+    await message.reply(
+        "**🤖 About this Bot**\n\n"
+        "This is an advanced anti-link Telegram bot built using Pyrogram.\n\n"
+        "🔹 Deletes links from non-admins in groups.\n"
+        "🔹 Clean, fast, and easy to use.\n"
+        "🔹 Designed to protect your group from spam.\n\n"
+        "👨‍💻 Developer: [@Leave_me_alone_12](https://t.me/Leave_me_alone_12)\n"
+        "⚡️ Powered by: [@AU_ANIMES](https://t.me/AU_ANIMES)",
+        disable_web_page_preview=True
     )
 
 @app.on_message(filters.group & filters.text)
